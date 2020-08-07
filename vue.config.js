@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/vue-simon-game/'
+   publicPath: '/vue-simon-game/'
 }
