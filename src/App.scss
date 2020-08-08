@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1f1f1f;
+    padding-top: 150px;
+    color: white;
+}
+
+.button-template {
+    width: 100px;
+    height: 40px;
+    background-color: #2fa195;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #22b190;
+    }
+}
+
+.game-wrapper {
+    max-width: 100%;
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+    filter: drop-shadow(0px 1px 0px rgba(255, 255, 255, 0.1));
+    background-color: #141414;
+    padding: 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+
+    @media screen and(max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        .buttons-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .game-options {
+            * {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .buttons-wrapper {
+        max-width: 300px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .button {
+            max-width: 100px;
+            height: 100px;
+            width: 100%;
+            opacity: 0.6;
+            border-radius: 4px;
+            border: solid 2px transparent;
+        }
+
+        .active {
+            opacity: 1 !important;
+            cursor: pointer;
+            box-shadow: 0px 0px 6px 2px;
+        }
+
+        .button:hover {
+            border: solid 2px aqua;
+            cursor: pointer;
+        }
+    }
+
+    .game-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .difficult-button-wrapper {
+            display: flex;
+            input:not(:first-child) {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .start-game-btn {
+        @extend .button-template
+    }
+}
+
+.lose-alert {
+    position: absolute;
+    max-width: 200px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f1f1f;
+    left: 0;
+    right: 0;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .lose-alert-text {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .lose-alert-btn {
+        @extend .button-template;
+        font-size: 20px;
+    }
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blur {
+    filter: blur(5px);
+}
